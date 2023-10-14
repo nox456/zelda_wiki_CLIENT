@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "zelda";
+    src: url("/assets/fonts/zelda.otf");
+}
+
+@layer components {
+    header {
+        @apply p-2;
+    }
+    main {
+        @apply w-3/5 mx-auto flex flex-col items-center gap-4;
+    }
+    footer {
+        @apply mt-auto;
+    }
+}

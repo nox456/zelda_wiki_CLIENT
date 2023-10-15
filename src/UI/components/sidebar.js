@@ -47,7 +47,7 @@ export default function sidebar() {
             </a>
             ${links.innerHTML}
             <div
-                class="[&>div]:w-full [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-full [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100"
+                class="[&>div]:w-full [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-fit [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100"
             >
                 <div id="develop-by"></div>
             </div>

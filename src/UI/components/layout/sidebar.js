@@ -33,21 +33,21 @@ export default function sidebar() {
     }
     document.querySelector("#sidebar").outerHTML = `
         <aside
-            class="flex flex-col border-r-2 border-blue-300 h-full w-[5%] justify-between group hover:w-[11%] px-2 transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black"
+            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[11%] px-2 transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black"
         >
             <a
                 href="/"
-                class="flex justify-start items-center gap-2 [&>div]:flex-shrink-0 h-16"
+                class="flex flex-col items-center h-20 py-2 gap-1"
             >
                 <div id="page-icon"></div>
                 <span
-                    class="opacity-0 group-hover:opacity-100 transition-opacity text-white text-center text-xl w-full font-zelda"
+                    class="opacity-0 h-0 group-hover:opacity-100 group-hover:h-full group-hover:transition-[height_150ms,opacity_150ms] group-hover:delay-150 ease-out text-white text-center text-lg font-zelda"
                     >The Hyrule Field</span
                 >
             </a>
             ${links.innerHTML}
             <div
-                class="[&>div]:w-full [&>div>p]:text-xs group-hover:[&>div>a>span]:opacity-100 [&>div>a>span]:opacity-0 [&>div>a>img]:flex-shrink-0 [&>div>a>span]:transition-opacity group-hover:[&>div>a]:justify-center [&>div]:h-20 [&>div>a]:justify-start"
+                class="[&>div]:w-full [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-fit [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100"
             >
                 <div id="develop-by"></div>
             </div>

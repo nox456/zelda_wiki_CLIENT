@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css",
-    "start": "serve src/",
+    "start": "serve ./src/",
     "dev": "serve ./src/",
     "tailwind": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"
   },

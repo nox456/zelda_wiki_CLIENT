@@ -10,4 +10,12 @@ export default class Character {
         })
         return data
     }
+    static async getByName(text) {
+        const res = await fetch(endpoint + `name/${text}`)
+        const { data } = await res.json()
+        data.forEach(character => {
+            character["img"] = HOST + "images/" + character["img"]
+        })
+        return data
+    }
 }

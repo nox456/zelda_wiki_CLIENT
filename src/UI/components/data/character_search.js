@@ -4,20 +4,20 @@ export default async function character_name() {
     const form = document.querySelector("#search-form");
     const container = document.querySelector("#character-all");
     const allChars = container.innerHTML;
+    const filter_input = document.getElementsByName("filter")[0];
+    const search_input = document.getElementsByName("value")[0];
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const search_input = document.getElementsByName("value");
-        const filter_input = document.getElementsByName("filter");
-        const value = search_input[0].value;
-        const filter = filter_input[0].value;
+        const value = search_input.value;
+        const filter = filter_input.value;
         let characters;
         if (filter == "name") {
             characters = await Character.getByName(value);
         } else if (filter == "race") {
             characters = await Character.getByRace(value)
         } else {
-            console.log(`buscar por juego: ${value}`);
+            characters = await Character.getByGame(value)
         }
 
         container.innerHTML = "";
@@ -42,4 +42,13 @@ export default async function character_name() {
             container.innerHTML = allChars;
         }
     });
+    filter_input.addEventListener("change", () => {
+        if (filter_input.value == "name") {
+            search_input.setAttribute("placeholder", "Nombre...")
+        } else if (filter_input.value == "race") {
+            search_input.setAttribute("placeholder", "Raza...")
+        } else {
+            search_input.setAttribute("placeholder", "Juego...")
+        }
+    })
 }

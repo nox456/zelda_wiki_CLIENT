@@ -29,4 +29,14 @@ export default class Character {
         })
         return characters.data
     }
+    static async getByGame(game) {
+        const res1 = await fetch(HOST + `games/name/${game}`)
+        const games = await res1.json()
+        const res2 = await fetch(endpoint + `game/${games.data[0].id}`)
+        const characters = await res2.json()
+        characters.data.forEach(character => {
+            character["img"] = HOST + "images/" + character["img"]
+        })
+        return characters.data
+    }
 }

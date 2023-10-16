@@ -1,4 +1,4 @@
-const HOST = "http://192.168.1.7:4000/"
+const HOST = "https://zeldawikiserver-production.up.railway.app/"
 const endpoint = HOST + "characters/"
 
 export default class Character {

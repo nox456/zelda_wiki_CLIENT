@@ -2,16 +2,25 @@ import Character from "../../api/Character.js";
 
 export default async function character_name() {
     const form = document.querySelector("#search-form");
-    const container = document.querySelector("#character-all")
-    const allChars = container.innerHTML
+    const container = document.querySelector("#character-all");
+    const allChars = container.innerHTML;
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const input = document.getElementsByName("text");
-        const text = input[0].value;
-        const characters = await Character.getByName(text);
+        const search_input = document.getElementsByName("value");
+        const filter_input = document.getElementsByName("filter");
+        const value = search_input[0].value;
+        const filter = filter_input[0].value;
+        let characters;
+        if (filter == "name") {
+            characters = await Character.getByName(value);
+        } else if (filter == "race") {
+            characters = await Character.getByRace(value)
+        } else {
+            console.log(`buscar por juego: ${value}`);
+        }
 
-        container.innerHTML = ""
+        container.innerHTML = "";
         characters.forEach((character) => {
             const element = document.createElement("article");
             element.className =
@@ -27,10 +36,10 @@ export default async function character_name() {
         });
     });
     form.addEventListener("change", (e) => {
-        const input = document.getElementsByName("text");
-        const text = input[0].value;
-        if (text == "") {
-            container.innerHTML = allChars
+        const search_input = document.getElementsByName("value");
+        const value = search_input[0].value;
+        if (value == "") {
+            container.innerHTML = allChars;
         }
-    })
+    });
 }

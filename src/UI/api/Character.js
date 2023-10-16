@@ -18,4 +18,15 @@ export default class Character {
         })
         return data
     }
+    static async getByRace(race) {
+        const res1 = await fetch(HOST + `races/name/${race}`)
+        const data1 = await res1.json()
+        const races = data1.data
+        const res2 = await fetch(endpoint + `race/${races[0].id}`)
+        const characters = await res2.json()
+        characters.data.forEach(character => {
+            character["img"] = HOST + "images/" + character["img"]
+        })
+        return characters.data
+    }
 }

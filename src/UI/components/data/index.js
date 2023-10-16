@@ -3,6 +3,6 @@ if (document.querySelector("#character-all")) {
     character_all.default()
 }
 if (document.querySelector("#search-form")) {
-    const character_name = await import("./character_name.js")
-    character_name.default() 
+    const character_search = await import("./character_search.js")
+    character_search.default() 
 }

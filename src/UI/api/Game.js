@@ -1,4 +1,4 @@
-const HOST = "http://192.168.1.7:4000/"
+import HOST from "../config.js"
 const endpoint = HOST + "games/"
 
 export default class Game {

@@ -7,6 +7,9 @@ export default async function game_search() {
     const input = document.querySelector("#input");
     
     let allGames
+    setTimeout(() => {
+        allGames = container.innerHTML
+    }, 200)
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -15,8 +18,9 @@ export default async function game_search() {
         let games;
         if (filter == "name") {
             games = await Game.getByName(value);
+        } else {
+            games = await Game.getByConsole(value)
         }
-        allGames = container.innerHTML
         container.innerHTML = "";
         games.forEach((game) => {
             const element = document.createElement("article");
@@ -36,6 +40,14 @@ export default async function game_search() {
         const value = input.value
         if (value == "") {
             container.innerHTML = allGames
+        }
+    })
+    filter_element.addEventListener("change", () => {
+        const value = filter_element.value
+        if (value == "name") {
+            input.setAttribute("placeholder", "Nombre...")
+        } else {
+            input.setAttribute("placeholder", "Consola...")
         }
     })
 }

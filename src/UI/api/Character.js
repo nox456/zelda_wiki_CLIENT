@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+const HOST = "https://zeldawikiserver-production.up.railway.app/"
+=======
 import HOST from "../config.js"
+>>>>>>> release/1.1
 const endpoint = HOST + "characters/"
 
 export default class Character {

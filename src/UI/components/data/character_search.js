@@ -3,9 +3,13 @@ import Character from "../../api/Character.js";
 export default async function character_name() {
     const form = document.querySelector("#search-form");
     const container = document.querySelector("#character-all");
-    const allChars = container.innerHTML;
     const filter_input = document.getElementsByName("filter")[0];
     const search_input = document.getElementsByName("value")[0];
+
+    let allChars
+    setTimeout(() => {
+        allChars = container.innerHTML
+    }, 200)
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();

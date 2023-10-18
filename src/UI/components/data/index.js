@@ -10,3 +10,9 @@ if (document.querySelector("#games-data")) {
     game_search.default();
     game_all.default();
 }
+if (document.querySelector("#consoles-data")) {
+    const console_all = await import("./console_all.js")
+    const console_search = await import("./console_search.js")
+    console_search.default()
+    console_all.default()
+}

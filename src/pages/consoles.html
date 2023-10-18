@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/css/output.css" />
+        <title>Consolas - The Hyrule Field</title>
+    </head>
+    <body class="h-screen flex relative">
+        <div id="img-background"></div>
+        <div id="sidebar"></div>
+        <main class="ml-[7%] w-full flex flex-col p-5">
+            <div class="w-full">
+                <h1 class="text-5xl text-white font-zelda">Consolas</h1>
+                <hr class="border border-blue-300" />
+            </div>
+            <form id="search-form" class="flex justify-between w-full">
+                <div>
+                    <input
+                        type="search"
+                        id="input"
+                        placeholder="Nombre..."
+                        class="px-4 py-2 rounded-sm placeholder:italic focus:outline-none bg-slate-700 border border-blue-300 text-white hover:bg-slate-800 focus:bg-slate-700 transition-colors"
+                    />
+                    <input
+                        type="submit"
+                        value="Buscar"
+                        class="border border-blue-300 text-white h-full px-2 rounded-sm cursor-pointer hover:bg-blue-300 transition-colors hover:text-black"
+                    />
+                </div>
+                <select
+                    id="filter"
+                    class="bg-slate-700 border border-blue-300 text-white px-4 focus:outline-none rounded-sm cursor-pointer"
+                >
+                    <option value="name" selected>Nombre</option>
+                </select>
+            </form>
+            <section
+                class="h-full w-full flex flex-wrap gap-4 p-4 justify-center overflow-y-auto"
+                id="consoles-data"
+            ></section>
+        </main>
+        <script src="/UI/components/layout/index.js" type="module"></script>
+        <script src="/UI/components/data/index.js" type="module"></script>
+    </body>
+</html>

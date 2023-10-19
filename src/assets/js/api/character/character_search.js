@@ -1,5 +1,5 @@
-import Character from "../../api/Character.js";
-import article_element from "../layout/article_element.js";
+import Character from "./Character.js";
+import article_element from "../components/article_element.js";
 
 export default async function character_name() {
     const form = document.querySelector("#search-form");

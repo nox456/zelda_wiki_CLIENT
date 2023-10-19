@@ -1,5 +1,5 @@
-import Game from "../../api/Game.js";
-import article_element from "../layout/article_element.js";
+import Game from "./Game.js";
+import article_element from "../components/article_element.js";
 
 export default async function game_search() {
     const form = document.querySelector("#search-form");

@@ -1,5 +1,5 @@
-import Console from "../../api/Console.js";
-import article_element from "../layout/article_element.js";
+import Console from "./Console.js";
+import article_element from "../components/article_element.js";
 
 export default async function console_all() {
     const container = document.querySelector("#consoles-data");

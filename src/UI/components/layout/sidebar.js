@@ -1,4 +1,4 @@
-export default function sidebar() {
+export default async function sidebar() {
     const links = document.createElement("div")
     if (document.title != "Categorias - The Hyrule Field") {
         links.innerHTML = `
@@ -53,4 +53,8 @@ export default function sidebar() {
             </div>
         </aside>
     `;
+    if (!document.querySelector(".category-article")) {
+        const link_sidebar = await import("./link_sidebar.js");
+        link_sidebar.default();
+    }
 }

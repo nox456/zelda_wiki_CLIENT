@@ -1,28 +1,32 @@
-if (document.querySelector("#img-background")) {
-    const img_background = await import("./img_background.js");
-    img_background.default();
-}
-if (document.querySelector("#sidebar")) {
+import img_background from "./img_background.js"
+import develop_by from "./develop_by.js"
+import page_icon from "./page_icon.js"
+
+const documentURL = window.location.pathname
+
+// BACKGROUND
+img_background()
+
+// SIDEBAR
+if (documentURL != "/") {
     const sidebar = await import("./sidebar.js");
     sidebar.default();
-    if (!document.querySelector(".category-article")) {
-        const link_sidebar = await import("./link_sidebar.js");
-        link_sidebar.default();
-    }
 }
-if (document.querySelector(".category-article")) {
+
+// DEVELOP BY
+develop_by()
+
+// PAGE ICON
+page_icon()
+
+// CATEGORIES ARTICLES
+if (documentURL == "/pages/categories") {
     const category_article = await import("./category_article.js");
     category_article.default();
 }
-if (document.querySelector("#page-icon")) {
-    const page_icon = await import("./page_icon.js");
-    page_icon.default();
-}
+
+// LINK
 if (document.querySelector("#link")) {
     const link = await import("./link.js");
     link.default();
-}
-if (document.querySelector("#develop-by")) {
-    const develop_by = await import("./develop_by.js");
-    develop_by.default();
 }

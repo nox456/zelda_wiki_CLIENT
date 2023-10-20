@@ -29,3 +29,11 @@ if (document.querySelector("#races-data")) {
     race_all.default()
     race_search.default()
 }
+
+// ENEMIES API
+if (document.querySelector("#enemies-data")) {
+    const enemie_all = await import("./enemie/enemie_all.js")
+    const enemie_search = await import("./enemie/enemie_search.js")
+    enemie_all.default()
+    enemie_search.default()
+}

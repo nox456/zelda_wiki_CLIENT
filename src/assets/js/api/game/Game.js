@@ -1,4 +1,4 @@
-import HOST from "../config.js"
+import HOST from "../../config.js"
 const endpoint = HOST + "games/"
 
 export default class Game {

@@ -1,21 +1,21 @@
 {
-  "name": "zelda_wiki_client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "predev": "echo 'const API_URL = `http://192.168.1.7:4000/`\nexport default API_URL' > ./src/UI/config.js",
-    "prestart": "echo 'const API_URL = `http://zeldawikiserver-production.up.railway.app/`\nexport default API_URL' > ./src/UI/config.js",
-    "build": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css",
-    "start": "serve ./src/",
-    "dev": "serve ./src/",
-    "tailwind": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"
-  },
-  "author": "Gabriel (nox) Vieira",
-  "license": "ISC",
-  "dependencies": {
-    "serve": "^14.2.1",
-    "tailwindcss": "^3.3.3"
-  }
+    "name": "zelda_wiki_client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "predev": "echo 'const API_URL = `http://192.168.1.7:4000/`\nexport default API_URL' > ./src/assets/js/config.js",
+        "prestart": "echo 'const API_URL = `http://zeldawikiserver-production.up.railway.app/`\nexport default API_URL' > ./src/assets/js/config.js",
+        "build": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css",
+        "start": "serve ./src/",
+        "dev": "serve ./src/",
+        "tailwind": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"
+    },
+    "author": "Gabriel (nox) Vieira",
+    "license": "ISC",
+    "dependencies": {
+        "serve": "^14.2.1",
+        "tailwindcss": "^3.3.3"
+    }
 }

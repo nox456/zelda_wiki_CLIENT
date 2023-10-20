@@ -21,3 +21,11 @@ if (document.querySelector("#games-data")) {
     game_all.default()
     game_search.default()
 }
+
+// RACES API
+if (document.querySelector("#races-data")) {
+    const race_all = await import("./race/race_all.js")
+    const race_search = await import("./race/race_search.js")
+    race_all.default()
+    race_search.default()
+}

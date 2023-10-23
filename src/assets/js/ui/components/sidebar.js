@@ -33,7 +33,7 @@ export default async function sidebar() {
     }
     document.querySelector("#sidebar").outerHTML = `
         <aside
-            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[11%] px-2 transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black"
+            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[11%] transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black overflow-hidden"
         >
             <a
                 href="/"
@@ -47,7 +47,7 @@ export default async function sidebar() {
             </a>
             ${links.innerHTML}
             <div
-                class="[&>div]:w-full [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-fit [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100"
+                class="[&>div]:w-[95%] [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-fit [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100"
             >
                 <div id="develop-by"></div>
             </div>

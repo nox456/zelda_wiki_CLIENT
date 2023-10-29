@@ -12,7 +12,7 @@
         @apply p-2;
     }
     main {
-        @apply w-3/5 sm:w-full mx-auto flex flex-col items-center gap-4;
+        @apply w-3/5 sm:w-full mx-auto flex flex-col items-center gap-4 sm:row-start-2;
     }
     footer {
         @apply mt-auto;

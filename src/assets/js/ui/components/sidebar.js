@@ -33,7 +33,7 @@ export default async function sidebar() {
     }
     document.querySelector("#sidebar").outerHTML = `
         <aside
-            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[11%] sm:hover:w-full transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black sm:shadow-none overflow-hidden sm:row-start-1 sm:static sm:w-full sm:flex-row sm:border-b-2 sm:border-r-0 sm:items-center sm:justify-between"
+            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[11%] sm:hover:w-full transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black sm:shadow-none overflow-hidden sm:row-start-1 sm:static sm:w-full sm:flex-row sm:border-b-2 sm:border-0 sm:items-center sm:justify-between"
         >
             <a
                 href="/"

@@ -2,7 +2,7 @@ export default async function sidebar() {
     const links = document.createElement("div")
     if (document.title != "Categorias - The Hyrule Field") {
         links.innerHTML = `
-            <div class="flex flex-col gap-2 justify-center border-y-4 border-white py-2">
+            <div class="flex flex-col gap-2 justify-center border-y-4 border-white py-2 sm:flex-row sm:border-none sm:items-center sm:gap-1">
                 <div class="link-sidebar component">
                     <div id="content">Personajes</div>
                     <div id="url">/pages/characters.html</div>

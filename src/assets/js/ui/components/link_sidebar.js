@@ -5,7 +5,7 @@ export default function link_sidebar() {
         const url = element.querySelector("#url").innerHTML;
         const imgUrl = element.querySelector("#imgUrl").innerHTML
         element.outerHTML = `
-        <a href="${url}" class="gap-1 group/link transition-none grid grid-cols-1 group-hover:grid-cols-2 sm:block">
+        <a href="${url}" class="group/link transition-none grid grid-cols-1 group-hover:grid-cols-2 sm:block">
             <div class="border border-green-300 rounded-full p-2 w-12 h-12 sm:w-8 sm:h-8 flex items-center justify-center group-hover/link:bg-green-300 group-hover/link:bg-opacity-30 transition-colors col-start-1 mx-auto">
                 <img src="/assets/img/sidebar/${imgUrl}" class="object-contain w-full h-full"/>
             </div>

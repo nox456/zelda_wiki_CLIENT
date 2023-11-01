@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/output.css">
-    <title>Razas - The Hyrule Field</title>
-</head>
-<body class="h-screen flex relative">
-    <div id="img-background"></div>
-    <div id="sidebar"></div>
-    <main class="ml-[7%] w-full flex flex-col p-5">
-        <div class="w-full">
-            <h1 class="text-5xl text-white font-zelda">Razas</h1>
-            <hr class="border border-blue-300">
-        </div>
-        <form class="flex justify-between w-full" id="search-form">
-            <div>
-                <input type="search" id="input" placeholder="Nombre..." class="px-4 py-2 rounded-sm placeholder:italic focus:outline-none bg-slate-700 border border-blue-300 text-white hover:bg-slate-800 focus:bg-slate-700 transition-colors">
-                <input type="submit" value="Buscar" class="border border-blue-300 text-white h-full px-2 rounded-sm cursor-pointer hover:bg-blue-300 transition-colors hover:text-black">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/css/output.css" />
+        <title>Razas - The Hyrule Field</title>
+    </head>
+    <body class="body-main">
+        <div id="img-background"></div>
+        <div id="sidebar"></div>
+        <main class="ml-[7%] w-full flex flex-col p-5 sm:ml-0">
+            <div class="w-full">
+                <h1 class="text-5xl text-white font-zelda">Razas</h1>
+                <hr class="border border-blue-300" />
             </div>
-            <select id="filter" class="bg-slate-700 border border-blue-300 text-white px-4 focus:outline-none rounded-sm cursor-pointer">
-                <option value="name">Nombre</option>
-                <option value="juego">Juego</option>
-            </select>
-        </form>
-        <section class="h-full w-full flex flex-wrap gap-4 p-4 justify-center overflow-y-auto" id="races-data"></section>
-    </main>
-    <script src="/assets/js/ui/index.js" type="module"></script>
-    <script src="/assets/js/api/index.js" type="module"></script>
-</body>
+            <form class="flex justify-between w-full sm:flex-col sm:gap-2 sm:h-1/5" id="search-form">
+                <div class="sm:flex sm:justify-between sm:w-full">
+                    <input
+                        type="search"
+                        id="input"
+                        placeholder="Nombre..."
+                        class="px-4 py-2 rounded-sm placeholder:italic focus:outline-none bg-slate-700 border border-blue-300 text-white hover:bg-slate-800 focus:bg-slate-700 transition-colors sm:px-2"
+                    />
+                    <input
+                        type="submit"
+                        value="Buscar"
+                        class="border border-blue-300 text-white h-full px-2 rounded-sm cursor-pointer hover:bg-blue-300 transition-colors hover:text-black"
+                    />
+                </div>
+                <select
+                    id="filter"
+                    class="bg-slate-700 border border-blue-300 text-white px-4 focus:outline-none rounded-sm cursor-pointer sm:py-2"
+                >
+                    <option value="name">Nombre</option>
+                    <option value="juego">Juego</option>
+                </select>
+            </form>
+            <section
+                class="h-full w-full flex flex-wrap gap-4 p-4 justify-center overflow-y-auto"
+                id="races-data"
+            ></section>
+        </main>
+        <script src="/assets/js/ui/index.js" type="module"></script>
+        <script src="/assets/js/api/index.js" type="module"></script>
+    </body>
 </html>

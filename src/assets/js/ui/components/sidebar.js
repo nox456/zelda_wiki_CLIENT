@@ -2,7 +2,7 @@ export default async function sidebar() {
     const links = document.createElement("div")
     if (document.title != "Categorias - The Hyrule Field") {
         links.innerHTML = `
-            <div class="flex flex-col gap-2 justify-center border-y-4 border-white py-2">
+            <div class="flex flex-col gap-2 justify-center border-y-4 border-white py-2 sm:flex-row sm:border-none sm:items-center sm:gap-1">
                 <div class="link-sidebar component">
                     <div id="content">Personajes</div>
                     <div id="url">/pages/characters.html</div>
@@ -33,21 +33,21 @@ export default async function sidebar() {
     }
     document.querySelector("#sidebar").outerHTML = `
         <aside
-            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[11%] transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black overflow-hidden"
+            class="flex flex-col border-r-2 border-blue-300 h-full w-[7%] justify-between group hover:w-[13%] sm:hover:w-full transition-[width_150ms] absolute z-10 bg-slate-700 shadow-xl shadow-black sm:shadow-none overflow-hidden sm:row-start-1 sm:static sm:w-full sm:flex-row sm:border-b-2 sm:border-0 sm:items-center sm:justify-between"
         >
             <a
                 href="/"
-                class="flex flex-col items-center h-20 py-2 gap-1"
+                class="flex flex-col items-center h-20 py-2 sm:p-0 sm:h-full gap-1 sm:gap-0 sm:[&>div]:h-full sm:[&>div]:rounded-none sm:[&>div]:border-0 sm:[&>div]:shadow-none sm:w-[25%] sm:border-r-2 sm:border-green-300"
             >
                 <div id="page-icon"></div>
                 <span
-                    class="opacity-0 h-0 group-hover:opacity-100 group-hover:h-full group-hover:transition-[height_150ms,opacity_150ms] group-hover:delay-150 ease-out text-white text-center text-lg font-zelda"
+                    class="opacity-0 h-0 group-hover:opacity-100 group-hover:h-full group-hover:transition-[height_150ms,opacity_150ms] group-hover:delay-150 ease-out text-white text-center text-lg font-zelda sm:opacity-100 sm:h-full sm:text-xs"
                     >The Hyrule Field</span
                 >
             </a>
             ${links.innerHTML}
             <div
-                class="[&>div]:w-[95%] [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-fit [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100"
+                class="[&>div]:w-[95%] [&>div>p]:text-xs [&>div]:h-20 [&>div>a>span]:opacity-0 [&>div>a>span]:w-0 group-hover:[&>div>a>span]:w-fit [&>div>a>span]:transition-[width_150ms] group-hover:[&>div>a>span]:opacity-100 sm:[&>div]:w-full sm:[&>div>a>span]:w-fit sm:[&>div>a>span]:opacity-100 sm:[&>div>a]:border-0 sm:[&>div>a]:rounded-none sm:[&>div]:border-l-2 sm:[&>div]:border-green-300 sm:[&>div>a]:flex-col sm:[&>div>a]:gap-0 sm:[&>div>a]:p-0 sm:w-[25%]"
             >
                 <div id="develop-by"></div>
             </div>

@@ -7,10 +7,10 @@ export default async function character_name() {
     const filter_input = document.getElementsByName("filter")[0];
     const search_input = document.getElementsByName("value")[0];
 
-    let allChars
+    let allChars;
     setTimeout(() => {
-        allChars = container.innerHTML
-    }, 200)
+        allChars = container.innerHTML;
+    }, 200);
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -20,15 +20,15 @@ export default async function character_name() {
         if (filter == "name") {
             characters = await Character.getByName(value);
         } else if (filter == "race") {
-            characters = await Character.getByRace(value)
+            characters = await Character.getByRace(value);
         } else {
-            characters = await Character.getByGame(value)
+            characters = await Character.getByGame(value);
         }
 
         container.innerHTML = "";
-        article_element(characters,container)
+        article_element(characters.data, container, characters.tableName);
     });
-    form.addEventListener("change", (e) => {
+    search_input.addEventListener("change", (e) => {
         const search_input = document.getElementsByName("value");
         const value = search_input[0].value;
         if (value == "") {
@@ -37,11 +37,11 @@ export default async function character_name() {
     });
     filter_input.addEventListener("change", () => {
         if (filter_input.value == "name") {
-            search_input.setAttribute("placeholder", "Nombre...")
+            search_input.setAttribute("placeholder", "Nombre...");
         } else if (filter_input.value == "race") {
-            search_input.setAttribute("placeholder", "Raza...")
+            search_input.setAttribute("placeholder", "Raza...");
         } else {
-            search_input.setAttribute("placeholder", "Juego...")
+            search_input.setAttribute("placeholder", "Juego...");
         }
-    })
+    });
 }

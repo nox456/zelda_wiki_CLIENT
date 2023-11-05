@@ -20,4 +20,7 @@
     .body-main {
         @apply h-screen flex relative sm:grid sm:grid-rows-[10%_90%] sm:grid-cols-[100%];
     }
+    .article-main {
+        @apply grid grid-cols-[80%_20%] grid-rows-[10%_90%] gap-1;
+    }
 }

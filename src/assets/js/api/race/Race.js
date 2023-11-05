@@ -31,4 +31,12 @@ export default class Race {
         })
         return data
     }
+    static async getById(id) {
+        const res = await fetch(`${endpoint}/${id}`)
+        const { data } = await res.json()
+
+        data["img"] = `${HOST}/images/${data["img"]}`
+
+        return data
+    }
 }

@@ -14,14 +14,14 @@ export default async function console_search() {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const input_value = input.value;
-        const consoles = await Console.getByName(input_value);
-        container.innerHTML = ""
-        article_element(consoles, container)
+        const { data, tableName } = await Console.getByName(input_value);
+        container.innerHTML = "";
+        article_element(data, container, tableName);
     });
     input.addEventListener("change", () => {
-        const input_value = input.value
+        const input_value = input.value;
         if (input_value == "") {
-            container.innerHTML = allConsoles
+            container.innerHTML = allConsoles;
         }
-    })
+    });
 }

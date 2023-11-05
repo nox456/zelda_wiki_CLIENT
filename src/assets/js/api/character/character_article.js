@@ -6,8 +6,11 @@ import article_description from "../components/article_description.js";
 import article_img from "../components/article_img.js";
 import article_game from "../components/article_game.js";
 import article_race from "../components/article_race.js";
+import article_data from "../components/article_data.js"
 
 export default async function character_article(id) {
+    const mainElement = document.querySelector("#character-data")
+    article_data(mainElement)
     const titleElement = document.querySelector("#article-title");
     const descriptionElement = document.querySelector("#article-description");
     const imgElement = document.querySelector("#article-img");

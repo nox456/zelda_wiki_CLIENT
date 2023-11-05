@@ -39,4 +39,12 @@ export default class Character {
         });
         return { data: characters.data, tableName: characters.tableName };
     }
+    static async getById(id) {
+        const res = await fetch(`${endpoint}${id}`)
+        const { data } = await res.json()
+
+        data["img"] = `${HOST}images/${data["img"]}`
+
+        return data
+    }
 }

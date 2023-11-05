@@ -23,7 +23,7 @@ export default async function game_search() {
             games = await Game.getByConsole(value)
         }
         container.innerHTML = "";
-        article_element(games, container)
+        article_element(games.data, container, games.tableName)
     });
     input.addEventListener("change", () => {
         const value = input.value

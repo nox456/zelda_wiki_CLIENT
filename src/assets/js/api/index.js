@@ -1,4 +1,3 @@
-const documentUrl = document.location.href
 // CHARACTERS API
 if (document.querySelector("#character-all")) {
     const character_all = await import("./character/character_all.js");
@@ -6,11 +5,9 @@ if (document.querySelector("#character-all")) {
     character_search.default();
     character_all.default();
 }
-if (documentUrl.includes("characters")) {
-    const id = document.querySelector("#character-id").textContent
-    document.querySelector("#character-id").remove()
+if (document.querySelector("#character-id")) {
     const character_article = await import("./character/character_article.js")
-    character_article.default(id)
+    character_article.default("#character-id")
 }
 
 // CONSOLES API

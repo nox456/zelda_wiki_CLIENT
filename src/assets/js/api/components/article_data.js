@@ -1,4 +1,5 @@
-export default function article_data(element) {
+export default function article_data(elementId) {
+    const element = document.querySelector(elementId)
     element.innerHTML = `
             <header
                 class="p-0 row-start-1 col-start-1 col-span-3 flex flex-col justify-center"

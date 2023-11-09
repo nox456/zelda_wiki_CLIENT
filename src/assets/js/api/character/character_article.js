@@ -6,28 +6,24 @@ import article_description from "../components/article_description.js";
 import article_img from "../components/article_img.js";
 import article_game from "../components/article_game.js";
 import article_race from "../components/article_race.js";
-import article_data from "../components/article_data.js"
+import article_data from "../components/article_data.js";
 
-export default async function character_article(id) {
-    const mainElement = document.querySelector("#character-data")
-    article_data(mainElement)
-    const titleElement = document.querySelector("#article-title");
-    const descriptionElement = document.querySelector("#article-description");
-    const imgElement = document.querySelector("#article-img");
-    const gameElement = document.querySelector("#article-game");
-    const raceElement = document.querySelector("#article-race");
+export default async function character_article(elementId) {
+    const id = document.querySelector(elementId).textContent
+    document.querySelector(elementId).remove()
+    article_data("#character-data");
 
     const { name, description, img, games_id, race_id } =
         await Character.getById(id);
 
     const totalGames = await Game.getAll();
 
-    let games
+    let games;
 
     if (totalGames.data.length == games_id.length) {
-        games = "Todos los juegos"
+        games = "Todos los juegos";
     } else {
-        games = []
+        games = [];
         for (let i = 0; i < games_id.length; i++) {
             games.push(await Game.getById(games_id[i]));
         }
@@ -35,9 +31,9 @@ export default async function character_article(id) {
 
     const race = await Race.getById(race_id);
 
-    article_title(name, titleElement);
-    article_description(description, descriptionElement);
-    article_img(img, imgElement);
-    article_game(games, gameElement);
-    article_race(race, raceElement);
+    article_title(name);
+    article_description(description);
+    article_img(img);
+    article_game(games);
+    article_race(race);
 }

@@ -1,15 +1,16 @@
-export default function article_game(articleGame, element) {
+export default function article_game(articleGame) {
+    const gameElement = document.querySelector("#article-game");
     if (typeof articleGame == "object") {
         let content = "";
         articleGame.forEach((game) => {
             const name = game.name.replace("The Legend of Zelda - ", "");
             content = content.concat(`<p>${name}</p>\n`);
         });
-        element.outerHTML = `
+        gameElement.outerHTML = `
            ${content}
     `;
     } else {
-        element.outerHTML = `
+        gameElement.outerHTML = `
             <p>${articleGame}</p>
         `
     }

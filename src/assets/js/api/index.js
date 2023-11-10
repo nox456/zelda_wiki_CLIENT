@@ -17,6 +17,10 @@ if (document.querySelector("#consoles-data")) {
     console_all.default()
     console_search.default()
 }
+if (document.querySelector("#console-id")) {
+    const console_article = await import("./console/console_article.js")
+    console_article.default("#console-id")
+}
 
 // GAMES API
 if (document.querySelector("#games-data")) {

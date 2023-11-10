@@ -20,7 +20,7 @@ develop_by()
 page_icon()
 
 // CATEGORIES ARTICLES
-if (documentURL == "/pages/categories") {
+if (documentURL.includes("categories")) {
     const category_article = await import("./components/category_article.js");
     category_article.default();
 }

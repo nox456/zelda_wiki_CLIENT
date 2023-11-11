@@ -5,9 +5,9 @@ if (document.querySelector("#character-all")) {
     character_search.default();
     character_all.default();
 }
-if (document.querySelector("#character-id")) {
+if (document.querySelector("#character-name")) {
     const character_article = await import("./character/character_article.js")
-    character_article.default("#character-id")
+    character_article.default("#character-name")
 }
 
 // CONSOLES API
@@ -17,9 +17,9 @@ if (document.querySelector("#consoles-data")) {
     console_all.default()
     console_search.default()
 }
-if (document.querySelector("#console-id")) {
+if (document.querySelector("#console-name")) {
     const console_article = await import("./console/console_article.js")
-    console_article.default("#console-id")
+    console_article.default("#console-name")
 }
 
 // GAMES API

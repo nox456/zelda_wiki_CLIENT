@@ -8,12 +8,13 @@ import article_release from "../components/article_release.js"
 import article_game from "../components/article_game.js"
 
 export default async function console_article(elementId) {
-    const id = document.querySelector(elementId).textContent
-    document.querySelector(elementId).remove()
+    const element = document.querySelector(elementId)
+    const { data } = await Console.getByName(element.textContent)
+    element.remove()
 
     article_data("#console-data","console")
 
-    const { name, description, img, release_date, games_id } = await Console.getById(id)
+    const { name, description, img, release_date, games_id } = await Console.getById(data[0].id)
 
     const games = [];
 

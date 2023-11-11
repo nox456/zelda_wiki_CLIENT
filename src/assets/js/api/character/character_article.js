@@ -9,12 +9,13 @@ import article_race from "../components/article_race.js";
 import article_data from "../components/article_data.js";
 
 export default async function character_article(elementId) {
-    const id = document.querySelector(elementId).textContent
-    document.querySelector(elementId).remove()
+    const element = document.querySelector(elementId)
+    const { data } = await Character.getByName(element.textContent)
+    element.remove()
     article_data("#character-data","character");
 
     const { name, description, img, games_id, race_id } =
-        await Character.getById(id);
+        await Character.getById(data[0].id);
 
     const totalGames = await Game.getAll();
 

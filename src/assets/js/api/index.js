@@ -5,9 +5,9 @@ if (document.querySelector("#character-all")) {
     character_search.default();
     character_all.default();
 }
-if (document.querySelector("#character-id")) {
+if (document.querySelector("#character-name")) {
     const character_article = await import("./character/character_article.js")
-    character_article.default("#character-id")
+    character_article.default("#character-name")
 }
 
 // CONSOLES API

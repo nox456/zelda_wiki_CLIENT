@@ -29,6 +29,10 @@ if (document.querySelector("#games-data")) {
     game_all.default()
     game_search.default()
 }
+if (document.querySelector("#game-name")) {
+    const game_article = await import("./game/game_article.js")
+    game_article.default("#game-name")
+}
 
 // RACES API
 if (document.querySelector("#races-data")) {

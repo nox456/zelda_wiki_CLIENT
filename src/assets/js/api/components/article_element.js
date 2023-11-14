@@ -3,6 +3,7 @@ export default function article_element(articles, container, table) {
         const element = document.createElement("a");
         const file_name = article.name
             .replace("The Legend of Zelda - ", "")
+            .replace("Zelda II - ", "")
             .replace("Nintendo Entertainment System (NES)","nes")
             .replace("Super Nintendo Entertainment System (SNES)","snes")
             .replace(/ /gi, "_")

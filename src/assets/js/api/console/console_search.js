@@ -5,11 +5,8 @@ export default async function console_search() {
     const container = document.querySelector("#consoles-data");
     const form = document.querySelector("#search-form");
     const input = document.querySelector("#input");
-    let allConsoles;
 
-    setTimeout(() => {
-        allConsoles = container.innerHTML;
-    }, 200);
+    const allConsoles = container.innerHTML;
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();

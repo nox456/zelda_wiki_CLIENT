@@ -7,10 +7,7 @@ export default async function character_name() {
     const filter_input = document.getElementsByName("filter")[0];
     const search_input = document.getElementsByName("value")[0];
 
-    let allChars;
-    setTimeout(() => {
-        allChars = container.innerHTML;
-    }, 200);
+    const allChars = container.innerHTML
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();

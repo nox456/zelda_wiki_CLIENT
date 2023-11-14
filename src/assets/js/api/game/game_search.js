@@ -7,10 +7,7 @@ export default async function game_search() {
     const filter_element = document.querySelector("#filter");
     const input = document.querySelector("#input");
     
-    let allGames
-    setTimeout(() => {
-        allGames = container.innerHTML
-    }, 200)
+    const allGames = container.innerHTML
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();

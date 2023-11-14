@@ -7,10 +7,7 @@ export default async function enemie_search() {
     const input = document.querySelector("#input")
     const filter = document.querySelector("#filter")
 
-    let allEnemies
-    setTimeout(() => {
-        allEnemies = container.innerHTML
-    }, 200)
+    const allEnemies = container.innerHTML
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault()

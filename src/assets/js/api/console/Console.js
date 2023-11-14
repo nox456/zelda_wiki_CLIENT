@@ -21,10 +21,10 @@ export default class Console {
     }
     static async getById(id) {
         const res = await fetch(`${endpoint}/${id}`);
-        const { data } = await res.json();
+        const { data, tableName } = await res.json();
         
         data["img"] = `${HOST}images/${data["img"]}`
 
-        return data
+        return { data, tableName }
     }
 }

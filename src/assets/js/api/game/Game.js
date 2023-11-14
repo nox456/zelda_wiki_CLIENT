@@ -12,10 +12,13 @@ export default class Game {
     }
     static async getByName(name) {
         const res = await fetch(endpoint + `name/${name}`);
-        const { data, tableName } = await res.json();
+        let { data, tableName } = await res.json();
         data.forEach((game) => {
             game["img"] = HOST + "images/" + game["img"];
         });
+        if (name == "The Legend of Zelda") {
+            data = data.filter(gm => gm.name == name)
+        }
         return { data, tableName };
     }
     static async getByConsole(console) {

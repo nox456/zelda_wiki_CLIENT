@@ -33,6 +33,24 @@ export default function article_data(elementId, article) {
                     <div id="article-game"></div>
                 </div>
             </section>
+        `,
+        game: `
+            <section>
+                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Fecha de lanzamiento</h2>
+                <hr class="border-2 border-blue-300">
+                <div class="py-4 text-white text-center font-bold">
+                    <div id="article-release"></div>
+                </div>
+            </section>
+            <hr class="border-2 border-blue-300">
+            <section>
+                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Consola</h2>
+                <hr class="border-2 border-blue-300">
+                <div class="py-4 text-white text-center font-bold">
+                    <div id="article-console"></div>
+                </div>
+            </section>
+            <hr class="border-2 border-blue-300">
         `
     };
     const element = document.querySelector(elementId);

@@ -7,10 +7,7 @@ export default function race_search() {
     const input = document.querySelector("#input")
     const filter = document.querySelector("#filter")
 
-    let allRaces
-    setTimeout(() => {
-        allRaces = container.innerHTML
-    }, 200)
+    const allRaces = container.innerHTML
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault()

@@ -1,13 +1,13 @@
 import HOST from "../../config.js";
 
-const endpoint = HOST + "consoles";
+const endpoint = `${HOST}/consoles`;
 
 export default class Console {
     static async getAll() {
-        const res1 = await fetch(`${endpoint}/`);
+        const res1 = await fetch(`${endpoint}`);
         const { data, tableName } = await res1.json();
         data.forEach((console) => {
-            console["img"] = `${HOST}images/${console["img"]}`;
+            console["img"] = `${HOST}/images/${console["img"]}`;
         });
         return { data, tableName };
     }
@@ -15,7 +15,7 @@ export default class Console {
         const res = await fetch(`${endpoint}/name/${name}`);
         const { data, tableName } = await res.json();
         data.forEach((console) => {
-            console["img"] = `${HOST}images/${console["img"]}`;
+            console["img"] = `${HOST}/images/${console["img"]}`;
         });
         return { data, tableName };
     }
@@ -23,8 +23,8 @@ export default class Console {
         const res = await fetch(`${endpoint}/${id}`);
         const { data, tableName } = await res.json();
         
-        data["img"] = `${HOST}images/${data["img"]}`
+        data["img"] = `${HOST}/images/${data["img"]}`
 
-        return { data, tableName }
+        return data
     }
 }

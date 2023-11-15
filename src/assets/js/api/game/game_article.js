@@ -19,7 +19,7 @@ export default async function game_article(elementId) {
     const game_console = await Console.getById(console_id)
 
     article_title(name)
-    article_console(game_console.data)
+    article_console(game_console)
     article_release(release_date)
     article_img(img)
     article_description(description)

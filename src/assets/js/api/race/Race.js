@@ -1,5 +1,5 @@
 import HOST from "../../config.js"
-const endpoint = HOST + "races"
+const endpoint = `${HOST}/races`
 
 export default class Race {
     static async getAll() {
@@ -21,7 +21,7 @@ export default class Race {
         return data
     }
     static async getByGame(game) {
-        const res1 = await fetch(`${HOST}games/name/${game}`)
+        const res1 = await fetch(`${HOST}/games/name/${game}`)
         const games = await res1.json()
         const res2 = await fetch(`${endpoint}/game/${games.data[0].id}`)
         const { data } = await res2.json()

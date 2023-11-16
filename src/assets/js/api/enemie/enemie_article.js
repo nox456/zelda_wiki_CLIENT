@@ -10,6 +10,7 @@ import article_game from "../components/article_game.js"
 export default async function enemie_article(elementId) {
     const element = document.querySelector(elementId)
     const { data } = await Enemie.getByName(element.textContent)
+    element.remove()
 
     article_data("#enemie-data","enemie")
 

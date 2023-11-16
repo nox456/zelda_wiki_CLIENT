@@ -41,6 +41,10 @@ if (document.querySelector("#races-data")) {
     await race_all.default()
     race_search.default()
 }
+if (document.querySelector("#race-name")) {
+    const race_article = await import("./race/race_article.js")
+    race_article.default("#race-name")
+}
 
 // ENEMIES API
 if (document.querySelector("#enemies-data")) {
@@ -48,4 +52,9 @@ if (document.querySelector("#enemies-data")) {
     const enemie_search = await import("./enemie/enemie_search.js")
     await enemie_all.default()
     enemie_search.default()
+}
+
+if (document.querySelector("#enemie-name")) {
+    const enemie_article = await import("./enemie/enemie_article.js")
+    enemie_article.default("#enemie-name")
 }

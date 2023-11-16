@@ -53,3 +53,8 @@ if (document.querySelector("#enemies-data")) {
     await enemie_all.default()
     enemie_search.default()
 }
+
+if (document.querySelector("#enemie-name")) {
+    const enemie_article = await import("./enemie/enemie_article.js")
+    enemie_article.default("#enemie-name")
+}

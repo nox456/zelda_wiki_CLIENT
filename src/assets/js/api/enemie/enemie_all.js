@@ -5,7 +5,7 @@ export default async function enemie_all() {
     return new Promise(async (resolve) => {
         const container = document.querySelector("#enemies-data");
         const enemies = await Enemie.getAll();
-        article_element(enemies, container);
+        article_element(enemies.data, container, enemies.tableName);
         resolve();
     });
 }

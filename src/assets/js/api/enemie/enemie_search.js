@@ -24,7 +24,7 @@ export default async function enemie_search() {
         }
 
         container.innerHTML = ""
-        article_element(enemies,container)
+        article_element(enemies.data, container, enemies.tableName)
     })
     input.addEventListener("change", () => {
         const input_value = input.value

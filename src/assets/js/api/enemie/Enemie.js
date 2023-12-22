@@ -28,10 +28,8 @@ export default class Enemie {
         return { data, tableName }
     }
     static async getByGame(game) {
-        const res1 = await fetch(`${HOST}/games/name/${game}`)
-        const games = await res1.json()
-        const res2 = await fetch(`${endpoint}/game/${games.data[0].id}`)
-        const { data, tableName } = await res2.json()
+        const res1 = await fetch(`${endpoint}/game/name/${game}`)
+        const { data, tableName } = await res1.json()
 
         data.forEach(enemie => {
             enemie["img"] = `${HOST}/images/${enemie["img"]}`

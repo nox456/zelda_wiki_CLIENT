@@ -22,7 +22,7 @@ export default function race_search() {
         }
 
         container.innerHTML = ""
-        article_element(races,container)
+        article_element(races.data,container)
     })
     input.addEventListener("change", () => {
         const input_value = input.value

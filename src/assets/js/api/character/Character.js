@@ -19,21 +19,16 @@ export default class Character {
         return { data, tableName };
     }
     static async getByRace(race) {
-        const res1 = await fetch(`${HOST}/races/name/${race}`);
-        const data1 = await res1.json();
-        const races = data1.data;
-        const res2 = await fetch(`${endpoint}/race/${races[0].id}`);
-        const characters = await res2.json();
+        const res1 = await fetch(`${endpoint}/race/name/${race}`);
+        const characters = await res1.json();
         characters.data.forEach((character) => {
             character["img"] = `${HOST}/images/${character["img"]}` 
         });
         return { data: characters.data, tableName: characters.tableName };
     }
     static async getByGame(game) {
-        const res1 = await fetch(`${HOST}/games/name/${game}`);
-        const games = await res1.json();
-        const res2 = await fetch(`${endpoint}/game/${games.data[0].id}`);
-        const characters = await res2.json();
+        const res1 = await fetch(`${endpoint}/game/name/${game}`);
+        const characters = await res1.json();
         characters.data.forEach((character) => {
             character["img"] = `${HOST}/images/${character["img"]}` 
         });

@@ -14,7 +14,7 @@ export default class Game {
         const res = await fetch(`${endpoint}/name/${name}`);
         if (res.status == 404) {
             const { message, query } = await res.json();
-            return { message, query }
+            return { message, query };
         } else {
             let { data, tableName } = await res.json();
             data.forEach((game) => {
@@ -27,12 +27,17 @@ export default class Game {
         }
     }
     static async getByConsole(console) {
-        const res1 = await fetch(`${endpoint}/console/name/${console}`);
-        const games = await res1.json();
-        games.data.forEach((game) => {
-            game["img"] = `${HOST}/images/${game["img"]}`;
-        });
-        return { data: games.data, tableName: games.tableName };
+        const res = await fetch(`${endpoint}/console/name/${console}`);
+        if (res.status == 404) {
+            const { message, query } = await res.json();
+            return { message, query };
+        } else {
+            const games = await res.json();
+            games.data.forEach((game) => {
+                game["img"] = `${HOST}/images/${game["img"]}`;
+            });
+            return { data: games.data, tableName: games.tableName };
+        }
     }
     static async getById(id) {
         const res = await fetch(`${endpoint}/${id}`);

@@ -33,13 +33,18 @@ export default class Enemie {
         return { data, tableName };
     }
     static async getByGame(game) {
-        const res1 = await fetch(`${endpoint}/game/name/${game}`);
-        const { data, tableName } = await res1.json();
+        const res = await fetch(`${endpoint}/game/name/${game}`);
+        if (res.status == 404) {
+            const { message, query } = await res.json();
+            return { message, query };
+        } else {
+            const { data, tableName } = await res.json();
 
-        data.forEach((enemie) => {
-            enemie["img"] = `${HOST}/images/${enemie["img"]}`;
-        });
-        return { data, tableName };
+            data.forEach((enemie) => {
+                enemie["img"] = `${HOST}/images/${enemie["img"]}`;
+            });
+            return { data, tableName };
+        }
     }
     static async getById(id) {
         const res = await fetch(`${endpoint}/${id}`);

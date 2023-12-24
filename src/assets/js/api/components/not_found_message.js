@@ -5,6 +5,7 @@ export default function not_found_message(articles,container) {
         name: "Nombre",
         race: "Raza",
         game: "Juego",
+        console: "Consola"
     };
     const elementMessage = document.createElement("div");
     elementMessage.className = "text-white font-bold text-lg";

@@ -26,13 +26,18 @@ export default class Race {
         }
     }
     static async getByGame(game) {
-        const res1 = await fetch(`${endpoint}/game/name/${game}`);
-        const { data, tableName } = await res1.json();
+        const res = await fetch(`${endpoint}/game/name/${game}`);
+        if (res.status == 404) {
+            const { message, query } = await res.json();
+            return { message, query };
+        } else {
+            const { data, tableName } = await res.json();
 
-        data.forEach((race) => {
-            race["img"] = `${HOST}/images/${race["img"]}`;
-        });
-        return { data, tableName };
+            data.forEach((race) => {
+                race["img"] = `${HOST}/images/${race["img"]}`;
+            });
+            return { data, tableName };
+        }
     }
     static async getById(id) {
         const res = await fetch(`${endpoint}/${id}`);

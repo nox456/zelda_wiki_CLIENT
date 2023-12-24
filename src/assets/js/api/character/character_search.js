@@ -1,5 +1,6 @@
 import Character from "./Character.js";
 import article_element from "../components/article_element.js";
+import not_found_message from "../components/not_found_message.js"
 
 export default async function character_name() {
     const form = document.querySelector("#search-form");
@@ -23,7 +24,11 @@ export default async function character_name() {
         }
 
         container.innerHTML = "";
-        article_element(characters.data, container, characters.tableName);
+        if (characters.data) {
+            article_element(characters.data, container, characters.tableName);
+        } else {
+            not_found_message(characters,container)
+        }
     });
     search_input.addEventListener("change", (e) => {
         const search_input = document.getElementsByName("value");

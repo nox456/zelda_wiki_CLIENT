@@ -2,6 +2,7 @@ import Enemie from "./Enemie.js";
 import article_element from "../components/article_element.js";
 import search_input from "../components/search_input.js"
 import resetElementList from "../components/lib/resetElementList.js";
+import not_found_message from "../components/not_found_message.js"
 
 export default async function enemie_search() {
     const container = document.querySelector("#enemies-data");
@@ -26,7 +27,11 @@ export default async function enemie_search() {
         }
 
         container.innerHTML = "";
+        if (enemies.data) { 
         article_element(enemies.data, container, enemies.tableName);
+        } else {
+            not_found_message(enemies,container)
+        }
     });
     resetElementList(container, allEnemies, input);
     filter.addEventListener("change", () => {

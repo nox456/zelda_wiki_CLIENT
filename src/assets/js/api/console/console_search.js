@@ -1,5 +1,6 @@
 import Console from "./Console.js";
 import article_element from "../components/article_element.js";
+import not_found_message from "../components/not_found_message.js"
 
 export default async function console_search() {
     const container = document.querySelector("#consoles-data");
@@ -11,9 +12,13 @@ export default async function console_search() {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const input_value = input.value;
-        const { data, tableName } = await Console.getByName(input_value);
+        const consoles = await Console.getByName(input_value);
         container.innerHTML = "";
-        article_element(data, container, tableName);
+        if (consoles.data) {
+        article_element(consoles.data, container, consoles.tableName);
+        } else {
+            not_found_message(consoles,container)
+        }
     });
     input.addEventListener("change", () => {
         const input_value = input.value;

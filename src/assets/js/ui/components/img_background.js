@@ -25,3 +25,5 @@ export default function img_background() {
         count++;
     }, 5000);
 }
+// Initialize
+img_background()

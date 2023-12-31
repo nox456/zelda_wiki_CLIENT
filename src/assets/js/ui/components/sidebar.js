@@ -1,5 +1,5 @@
 export default async function sidebar() {
-    const links = document.createElement("div")
+    const links = document.createElement("div");
     if (document.title != "Categorias - The Hyrule Field") {
         links.innerHTML = `
             <div class="flex flex-col gap-2 justify-center border-y-4 border-white py-2 sm:flex-row sm:border-none sm:items-center sm:gap-1">
@@ -29,7 +29,7 @@ export default async function sidebar() {
                     <div id="imgUrl">enemies.webp</div>
                 </div>
             </div>
-        `
+        `;
     }
     document.querySelector("#sidebar").outerHTML = `
         <aside
@@ -54,7 +54,8 @@ export default async function sidebar() {
         </aside>
     `;
     if (!document.querySelector(".category-article")) {
-        const link_sidebar = await import("./link_sidebar.js");
-        link_sidebar.default();
+        await import("./link_sidebar.js");
     }
 }
+// Initialize
+await sidebar();

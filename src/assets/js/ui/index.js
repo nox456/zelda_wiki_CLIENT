@@ -1,32 +1,20 @@
-import img_background from "./components/img_background.js"
-import develop_by from "./components/develop_by.js"
-import page_icon from "./components/page_icon.js"
+const documentURL = window.location.pathname;
 
-const documentURL = window.location.pathname
+// Images Background
+await import("./components/img_background.js")
 
-// BACKGROUND
-img_background()
-
-// SIDEBAR
+// Sidebar
 if (documentURL != "/") {
-    const sidebar = await import("./components/sidebar.js");
-    sidebar.default();
+    await import("./components/sidebar.js");
 }
 
-// DEVELOP BY
-develop_by()
+// Page icon in sidebar
+await import("./components/page_icon.js")
 
-// PAGE ICON
-page_icon()
+// Link to GitHub in sidebar
+await import("./components/develop_by.js")
 
 // CATEGORIES ARTICLES
 if (documentURL.includes("categories")) {
-    const category_article = await import("./components/category_article.js");
-    category_article.default();
-}
-
-// LINK
-if (document.querySelector("#link")) {
-    const link = await import("./components/link.js");
-    link.default();
+    await import("./components/category_article.js");
 }

@@ -14,3 +14,5 @@ export default function link_sidebar() {
     `;
     });
 }
+// Initialize
+link_sidebar()

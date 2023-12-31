@@ -18,3 +18,5 @@ export default function category_article() {
         `
     })
 }
+// Initialize
+category_article()

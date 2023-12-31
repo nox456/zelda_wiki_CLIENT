@@ -14,29 +14,18 @@
                 <h1 class="text-5xl text-white font-zelda">Enemigos</h1>
                 <hr class="border border-blue-300" />
             </div>
-            <form id="search-form" class="flex justify-between w-full sm:flex-col sm:gap-2 sm:h-1/5">
-                <div class="sm:flex sm:justify-between sm:w-full">
-                    <input
-                        type="search"
-                        id="input"
-                        placeholder="Nombre..."
-                        class="px-4 py-2 rounded-sm placeholder:italic focus:outline-none bg-slate-700 border border-blue-300 text-white hover:bg-slate-800 focus:bg-slate-700 transition-colors sm:px-2"
-                    />
-                    <input
-                        type="submit"
-                        value="Buscar"
-                        class="border border-blue-300 text-white h-full px-2 rounded-sm cursor-pointer hover:bg-blue-300 transition-colors hover:text-black"
-                    />
+            <div id="search-form">
+                <div id="filter-input">
+                    <select
+                        id="filter"
+                        class="bg-slate-700 border border-blue-300 text-white px-4 focus:outline-none rounded-sm cursor-pointer sm:py-2"
+                    >
+                        <option value="name" selected>Nombre</option>
+                        <option value="category">Categoria</option>
+                        <option value="game">Juego</option>
+                    </select>
                 </div>
-                <select
-                    id="filter"
-                    class="bg-slate-700 border border-blue-300 text-white px-4 focus:outline-none rounded-sm cursor-pointer sm:py-2"
-                >
-                    <option value="name" selected>Nombre</option>
-                    <option value="category">Categoria</option>
-                    <option value="game">Juego</option>
-                </select>
-            </form>
+            </div>
             <section
                 class="h-full w-full flex flex-wrap gap-4 p-4 justify-center overflow-y-auto"
                 id="enemies-data"

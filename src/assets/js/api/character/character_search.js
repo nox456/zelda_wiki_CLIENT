@@ -5,8 +5,8 @@ import not_found_message from "../components/not_found_message.js"
 export default async function character_name() {
     const form = document.querySelector("#search-form");
     const container = document.querySelector("#character-all");
-    const filter_input = document.getElementsByName("filter")[0];
-    const search_input = document.getElementsByName("value")[0];
+    const filter_input = document.querySelector("#filter")
+    const search_input = document.querySelector("#input")
 
     const allChars = container.innerHTML
 

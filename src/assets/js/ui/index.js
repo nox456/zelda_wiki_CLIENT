@@ -3,6 +3,9 @@ const documentURL = window.location.pathname;
 // Images Background
 await import("./components/img_background.js")
 
+// Search Form
+await import("./components/search_form.js")
+
 // Sidebar
 if (documentURL != "/") {
     await import("./components/sidebar.js");

@@ -1,5 +1,5 @@
 export default function link_sidebar() {
-    const elements = Array.from(document.querySelectorAll(".link-sidebar.component"));
+    const elements = Array.from(document.querySelectorAll(".link-sidebar"));
     elements.forEach((element) => {
         const content = element.querySelector("#content").innerHTML;
         const url = element.querySelector("#url").innerHTML;

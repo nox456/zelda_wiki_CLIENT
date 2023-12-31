@@ -21,6 +21,18 @@
         @apply h-screen flex relative sm:grid sm:grid-rows-[10%_90%] sm:grid-cols-[100%];
     }
     .article-main {
-        @apply grid grid-cols-[100%] grid-rows-[10%_90%] gap-1;
+        @apply ml-[7%] w-full p-5 sm:ml-0 [&>*]:h-full grid grid-cols-[100%] grid-rows-[10%_90%] gap-1;
+    }
+    .article-section-title {
+        @apply text-black font-zelda text-center text-lg bg-blue-300 sm:text-sm
+    }
+    .article-section-container {
+        @apply py-4 text-white text-center font-bold;
+    }
+    .article-section-game {
+        @apply flex flex-col overflow-y-hidden sm:overflow-y-visible sm:block;
+    }
+    .select-input {
+        @apply bg-slate-700 border border-blue-300 text-white p-2 focus:outline-none rounded-sm cursor-pointer sm:py-2;
     }
 }

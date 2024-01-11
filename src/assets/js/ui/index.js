@@ -1,10 +1,12 @@
 const documentURL = window.location.pathname;
 
 // Images Background
-await import("./components/img_background.js")
+await import("./components/img_background.js");
 
 // Search Form
-await import("./components/search_form.js")
+if (document.querySelector("#filter-input")) {
+    await import("./components/search_form.js");
+}
 
 // Sidebar
 if (documentURL != "/") {
@@ -12,10 +14,10 @@ if (documentURL != "/") {
 }
 
 // Page icon in sidebar
-await import("./components/page_icon.js")
+await import("./components/page_icon.js");
 
 // Link to GitHub in sidebar
-await import("./components/develop_by.js")
+await import("./components/develop_by.js");
 
 // CATEGORIES ARTICLES
 if (documentURL.includes("categories")) {

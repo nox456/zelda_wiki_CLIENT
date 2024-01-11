@@ -9,3 +9,5 @@ export default function develop_by() {
         </div>
     `
 }
+// Initialize
+develop_by()

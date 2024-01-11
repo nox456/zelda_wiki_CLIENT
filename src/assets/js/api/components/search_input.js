@@ -4,7 +4,7 @@ export default function search_input(filter,container,allElements) {
         input.outerHTML = `
         <select 
             id="input" 
-            class="bg-slate-700 border border-blue-300 text-white px-4 py-2 focus:outline-none rounded-sm cursor-pointer sm:py-2"
+            class="select-input"
         >
             <option value="Jefe">Jefe</option>
             <option value="Basico">Basico</option>

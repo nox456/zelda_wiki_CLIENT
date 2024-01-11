@@ -2,60 +2,60 @@ export default function article_data(elementId, article) {
     const articleSections = {
         character: `
             <section>
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300 sm:text-sm">Raza</h2>
+                <h2 class="article-section-title">Raza</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold">
+                <div class="article-section-container">
                     <div id="article-race"></div>
                 </div>
             </section>
             <hr class="border-2 border-blue-300">
-            <section class="flex flex-col overflow-y-hidden sm:overflow-y-visible sm:block">
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300 sm:text-sm">Juegos en los que aparece</h2>
+            <section class="article-section-game">
+                <h2 class="article-section-title">Juegos en los que aparece</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold sm:h-full sm:max-h-[15em] overflow-y-auto">
+                <div class="article-section-container sm:h-full sm:max-h-[15em] overflow-y-auto">
                     <div id="article-game"></div>
                 </div>
             </section>
         `,
         console: `
             <section>
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Fecha de lanzamiento</h2>
+                <h2 class="article-section-title">Fecha de lanzamiento</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold">
+                <div class="article-section-container">
                     <div id="article-release"></div>
                 </div>
             </section>
             <hr class="border-2 border-blue-300">
-            <section class="flex flex-col overflow-y-hidden sm:overflow-y-visible sm:block">
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Juegos que contiene</h2>
+            <section class="article-section-game">
+                <h2 class="article-section-title">Juegos que contiene</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold sm:h-full sm:max-h-[15em] overflow-y-auto">
+                <div class="article-section-container sm:h-full sm:max-h-[15em] overflow-y-auto">
                     <div id="article-game"></div>
                 </div>
             </section>
         `,
         game: `
             <section>
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300 sm:text-sm">Fecha de lanzamiento</h2>
+                <h2 class="article-section-title">Fecha de lanzamiento</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold">
+                <div class="article-section-container">
                     <div id="article-release"></div>
                 </div>
             </section>
             <hr class="border-2 border-blue-300">
             <section>
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Consola</h2>
+                <h2 class="article-section-title">Consola</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold sm:h-full">
+                <div class="article-section-container sm:h-full">
                     <div id="article-console"></div>
                 </div>
             </section>
         `,
         race: `
-            <section class="flex flex-col overflow-y-hidden sm:overflow-y-visible sm:block">
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Juegos en los que aparece</h2>
+            <section class="article-section-game">
+                <h2 class="article-section-title">Juegos en los que aparece</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold sm:h-full sm:max-h-[15em] overflow-y-auto">
+                <div class="article-section-container sm:h-full sm:max-h-[15em] overflow-y-auto">
                     <div id="article-game"></div>
                 </div>
             </section>
@@ -63,17 +63,17 @@ export default function article_data(elementId, article) {
         `,
         enemie: `
             <section>
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Categoria</h2>
+                <h2 class="article-section-title">Categoria</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold">
+                <div class="article-section-container">
                     <div id="article-category"></div>
                 </div>
             </section>
             <hr class="border-2 border-blue-300">
-            <section class="flex flex-col overflow-y-hidden sm:overflow-y-visible sm:block">
-                <h2 class="text-black font-zelda text-center text-lg bg-blue-300">Juegos en los que aparece</h2>
+            <section class="article-section-game">
+                <h2 class="article-section-title">Juegos en los que aparece</h2>
                 <hr class="border-2 border-blue-300">
-                <div class="py-4 text-white text-center font-bold sm:h-full sm:max-h-[15em] overflow-y-auto">
+                <div class="article-section-container sm:h-full sm:max-h-[15em] overflow-y-auto">
                     <div id="article-game"></div>
                 </div>
             </section>

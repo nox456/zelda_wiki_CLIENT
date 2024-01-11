@@ -5,3 +5,5 @@ export default function icon_page() {
         </div>
     `;
 }
+// Initialize
+icon_page()

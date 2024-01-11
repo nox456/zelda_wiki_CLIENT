@@ -1,35 +1,35 @@
 export default async function sidebar() {
-    const links = document.createElement("div")
+    const links = document.createElement("div");
     if (document.title != "Categorias - The Hyrule Field") {
         links.innerHTML = `
             <div class="flex flex-col gap-2 justify-center border-y-4 border-white py-2 sm:flex-row sm:border-none sm:items-center sm:gap-1">
-                <div class="link-sidebar component">
+                <div class="link-sidebar">
                     <div id="content">Personajes</div>
                     <div id="url">/pages/characters.html</div>
                     <div id="imgUrl">characters.webp</div>
                 </div>
-                <div class="link-sidebar component">
+                <div class="link-sidebar">
                     <div id="content">Juegos</div>
                     <div id="url">/pages/games.html</div>
                     <div id="imgUrl">games.png</div>
                 </div>
-                <div class="link-sidebar component">
+                <div class="link-sidebar">
                     <div id="content">Consolas</div>
                     <div id="url">/pages/consoles.html</div>
                     <div id="imgUrl">consoles.webp</div>
                 </div>
-                <div class="link-sidebar component">
+                <div class="link-sidebar">
                     <div id="content">Razas</div>
                     <div id="url">/pages/races.html</div>
                     <div id="imgUrl">races.png</div>
                 </div>
-                <div class="link-sidebar component">
+                <div class="link-sidebar">
                     <div id="content">Enemigos</div>
                     <div id="url">/pages/enemies.html</div>
                     <div id="imgUrl">enemies.webp</div>
                 </div>
             </div>
-        `
+        `;
     }
     document.querySelector("#sidebar").outerHTML = `
         <aside
@@ -54,7 +54,8 @@ export default async function sidebar() {
         </aside>
     `;
     if (!document.querySelector(".category-article")) {
-        const link_sidebar = await import("./link_sidebar.js");
-        link_sidebar.default();
+        await import("./link_sidebar.js");
     }
 }
+// Initialize
+await sidebar();

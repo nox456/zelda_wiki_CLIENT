@@ -4,17 +4,26 @@ const endpoint = `${HOST}/games`;
 export default class Game {
     static async getAll() {
         const res = await fetch(endpoint);
-        const { data, tableName } = await res.json();
-        data.forEach((game) => {
-            game["img"] = `${HOST}/images/${game["img"]}`;
-        });
-        return { data, tableName };
+        if (res.status == 500) {
+            const { message } = await res.json();
+            return { message, status: res.status };
+        } else {
+            const { data, tableName } = await res.json();
+            data.forEach((game) => {
+                game["img"] = `${HOST}/images/${game["img"]}`;
+            });
+            return { data, tableName };
+        }
     }
     static async getByName(name) {
         const res = await fetch(`${endpoint}/name/${name}`);
         if (res.status == 404) {
             const { message, query } = await res.json();
             return { message, query };
+        }
+        if (res.status == 500) {
+            const { message } = await res.json();
+            return { message, status: res.status };
         } else {
             let { data, tableName } = await res.json();
             data.forEach((game) => {
@@ -31,6 +40,10 @@ export default class Game {
         if (res.status == 404) {
             const { message, query } = await res.json();
             return { message, query };
+        }
+        if (res.status == 500) {
+            const { message } = await res.json();
+            return { message, status: res.status };
         } else {
             const games = await res.json();
             games.data.forEach((game) => {

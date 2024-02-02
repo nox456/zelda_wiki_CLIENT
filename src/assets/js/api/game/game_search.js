@@ -1,6 +1,7 @@
 import Game from "./Game.js";
 import article_element from "../components/article_element.js";
 import not_found_message from "../components/not_found_message.js";
+import serverErrorMessage from "../components/serverErrorMessage.js";
 
 export default async function game_search() {
     const form = document.querySelector("#search-form");
@@ -21,10 +22,12 @@ export default async function game_search() {
             games = await Game.getByConsole(value);
         }
         container.innerHTML = "";
-        if (games.data) {
-            article_element(games.data, container, games.tableName);
-        } else {
+        if (games.status == 500) {
+            serverErrorMessage(container, games.message);
+        } else if (games.status == 404) {
             not_found_message(games, container);
+        } else {
+            article_element(games.data, container, games.tableName);
         }
     });
     input.addEventListener("change", () => {

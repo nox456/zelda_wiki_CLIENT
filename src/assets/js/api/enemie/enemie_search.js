@@ -3,6 +3,7 @@ import article_element from "../components/article_element.js";
 import search_input from "../components/search_input.js"
 import resetElementList from "../components/lib/resetElementList.js";
 import not_found_message from "../components/not_found_message.js"
+import serverErrorMessage from "../components/serverErrorMessage.js"
 
 export default async function enemie_search() {
     const container = document.querySelector("#enemies-data");
@@ -27,10 +28,12 @@ export default async function enemie_search() {
         }
 
         container.innerHTML = "";
-        if (enemies.data) { 
-        article_element(enemies.data, container, enemies.tableName);
-        } else {
+        if (enemies.status == 404) { 
             not_found_message(enemies,container)
+        } if (enemies.status == 500) {
+            serverErrorMessage(container,enemies.message)
+        } else {
+            article_element(enemies.data, container, enemies.tableName);
         }
     });
     resetElementList(container, allEnemies, input);

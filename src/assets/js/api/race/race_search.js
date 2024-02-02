@@ -1,6 +1,7 @@
 import Race from "./Race.js";
 import article_element from "../components/article_element.js";
 import not_found_message from "../components/not_found_message.js";
+import serverErrorMessage from "../components/serverErrorMessage.js"
 
 export default function race_search() {
     const container = document.querySelector("#races-data");
@@ -23,10 +24,12 @@ export default function race_search() {
         }
 
         container.innerHTML = "";
-        if (races.data) {
-            article_element(races.data, container);
-        } else {
+        if (races.status == 500) {
+            serverErrorMessage(container,races.message)
+        } if (races.status == 400) {
             not_found_message(races, container);
+        } else {
+            article_element(races.data, container);
         }
     });
     input.addEventListener("change", () => {

@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "predev": "echo 'const API_URL = `http://192.168.1.2:4000`\nexport default API_URL' > ./src/assets/js/config.js",
+        "predev": "echo 'const API_URL = `http://192.168.1.6:4000`\nexport default API_URL' > ./src/assets/js/config.js",
         "prebuild": "echo 'const API_URL = `https://zelda-wiki-server.onrender.com`\nexport default API_URL' > ./src/assets/js/config.js",
         "build": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css",
         "dev": "serve ./src/",

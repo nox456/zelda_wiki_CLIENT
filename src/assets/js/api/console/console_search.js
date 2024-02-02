@@ -1,6 +1,7 @@
 import Console from "./Console.js";
 import article_element from "../components/article_element.js";
-import not_found_message from "../components/not_found_message.js"
+import not_found_message from "../components/not_found_message.js";
+import serverErrorMessage from "../components/serverErrorMessage.js";
 
 export default async function console_search() {
     const container = document.querySelector("#consoles-data");
@@ -14,10 +15,13 @@ export default async function console_search() {
         const input_value = input.value;
         const consoles = await Console.getByName(input_value);
         container.innerHTML = "";
-        if (consoles.data) {
-        article_element(consoles.data, container, consoles.tableName);
+        if (consoles.status == 404) {
+            not_found_message(consoles, container);
+        }
+        if (consoles.status == 500) {
+            serverErrorMessage(container, consoles.message);
         } else {
-            not_found_message(consoles,container)
+            article_element(consoles.data, container, consoles.tableName);
         }
     });
     input.addEventListener("change", () => {

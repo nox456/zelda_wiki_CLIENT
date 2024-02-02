@@ -1,6 +1,7 @@
 import Character from "./Character.js";
 import article_element from "../components/article_element.js";
 import not_found_message from "../components/not_found_message.js"
+import serverErrorMessage from "../components/serverErrorMessage.js"
 
 export default async function character_name() {
     const form = document.querySelector("#search-form");
@@ -24,8 +25,10 @@ export default async function character_name() {
         }
 
         container.innerHTML = "";
-        if (characters.data) {
+        if (characters.status == 404) {
             article_element(characters.data, container, characters.tableName);
+        } else if (characters.status == 500) {
+            serverErrorMessage(container,characters.message)
         } else {
             not_found_message(characters,container)
         }
